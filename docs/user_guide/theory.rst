@@ -359,6 +359,13 @@ three point integration as the shape functions (:math:`\textbf{N}`) are quadrati
   Q_x &= \sum_e \sum_{i=1}^3 w_i \textbf{N}_i \textbf{y}_e J_e \\
   Q_y &= \sum_e \sum_{i=1}^3 w_i \textbf{N}_i \textbf{x}_e J_e \\
 
+The density weighted first moments of area (first moments of mass) are obtained by
+multiplying the first moment of area of each element by its density :math:`\rho_e`:
+
+.. math::
+  Q_{x,m} &= \sum_e \rho_e \sum_{i=1}^3 w_i \textbf{N}_i \textbf{y}_e J_e \\
+  Q_{y,m} &= \sum_e \rho_e \sum_{i=1}^3 w_i \textbf{N}_i \textbf{x}_e J_e \\
+
 Centroids
 ~~~~~~~~~
 
@@ -367,6 +374,13 @@ The coordinates of the centroid are found from [Pilkey]_:
 .. math::
   x_c &= \frac{Q_y}{A} \\
   y_c &= \frac{Q_x}{A} \\
+
+Similarly, the coordinates of the mass centroid (centre of mass) are found from the
+density weighted first moments of area and the cross-sectional mass:
+
+.. math::
+  x_{cm} &= \frac{Q_{y,m}}{M} \\
+  y_{cm} &= \frac{Q_{x,m}}{M} \\
 
 Second Moments of Area
 ~~~~~~~~~~~~~~~~~~~~~~
